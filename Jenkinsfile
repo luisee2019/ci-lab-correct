@@ -17,8 +17,10 @@ node {
               withMaven (maven: 'maven3') {
                             sh "mvn test"
           }
+          }
       } finally {
-          junit 'build/reports/**/*.xml'
+          junit 'target/surefire-reports/**/*.xml'
       }
   }
 }
+
