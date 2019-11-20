@@ -11,7 +11,7 @@ node {
               sh "mvn package"
   }
   // you should add a test report here
-  node {
+
       try {
           stage('Test') {
               withMaven (maven: 'maven3') {
@@ -22,6 +22,5 @@ node {
           junit 'target/surefire-reports/**/*.xml'
       }
   }
-}
 }
 
